@@ -1,4 +1,4 @@
-import { formatDate, getBlogPosts } from '@/app/blog/contents/utils';
+import { formatDate, getBlogPosts } from '@/app/blog/utils';
 import { useMemo } from 'react';
 import Link from 'next/link';
 

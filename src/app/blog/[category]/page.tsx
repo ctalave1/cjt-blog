@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getBlogPosts } from "../contents/utils";
+import { getBlogPosts } from "../utils";
 import Link from "next/link";
 import CardCategory from "@/components/CardCategory";
 import Container from "@/components/Container";

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { formatDate, getBlogPosts } from "../../contents/utils";
+import { formatDate, getBlogPosts } from "../../utils";
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 import { BreadcrumbWithCustomSeparator as Breadcrumb } from "@/components/Breadcrumb";

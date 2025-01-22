@@ -1,4 +1,4 @@
-import { formatDate } from "@/app/blog/contents/utils";
+import { formatDate } from "@/app/blog/utils";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
 const CardCategory = ({ title, summary, date }: { title: string, summary: string, date: string}) => {
