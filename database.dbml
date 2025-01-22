@@ -1,0 +1,14 @@
+Table "Blog" {
+  "id" int4 [pk, not null, increment]
+  "slug" text [unique, not null]
+  "title" text [not null]
+  "category" text [not null]
+  "view_count" int4 [not null, default: 1]
+  "updated_at" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+}
+
+Table "Subscriber" {
+  "id" int4 [pk, not null, increment]
+  "email" text [not null]
+  "is_subscribed" bool [not null, default: true]
+}

@@ -4,13 +4,14 @@ import Container from "@/components/Container";
 import Header from "@/components/Header";
 import { BreadcrumbWithCustomSeparator as Breadcrumb } from "@/components/Breadcrumb";
 import CustomMDX from "@/components/CustomMDX";
+import ReportViews from "@/components/ReportViews";
 
 export const generateStaticParams = () => {
   let posts = getBlogPosts();
 
   return posts.map(post => ({
     slug: post.slug
-  }))
+  }));
 };
 
 const Page = ({ params }: { params: { category: string, slug: string } }) => {
@@ -22,6 +23,11 @@ const Page = ({ params }: { params: { category: string, slug: string } }) => {
 
   return (
     <>
+      <ReportViews
+        category={post.metadata.category}
+        title={post.metadata.title}
+        slug={post.slug}
+      />
       <Header>
         <Container>
           <Breadcrumb 
