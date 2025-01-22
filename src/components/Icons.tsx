@@ -10,7 +10,7 @@ import {
 export type Icon = typeof LucideIcon;
 
 export const Icons = {
-	logo: ({...props}): LucideProps => (
+	logo: ({...props}) => (
 		<svg
 			aria-hidden="true"
 			focusable="false"
@@ -39,7 +39,7 @@ export const Icons = {
 				d="M363.772339,183.148376 C366.899017,182.784683 368.358063,183.574982 368.019623,186.616623 C367.803864,188.555649 367.979187,190.538193 367.979187,192.754532 C352.006195,192.754532 336.401611,192.754532 320.422119,192.754532 C320.422119,189.805099 320.422119,186.766861 320.422119,183.148254 C334.739838,183.148254 349.019318,183.148254 363.772339,183.148376 z"/>
 		</svg>
 	),
-	logoAlt1: ({...props}): LucideProps => (
+	logoAlt1: ({...props}) => (
 		<svg
 			aria-hidden="true"
 			focusable="false"
@@ -60,7 +60,7 @@ export const Icons = {
 				d="M363.772339,183.148376 C366.899017,182.784683 368.358063,183.574982 368.019623,186.616623 C367.803864,188.555649 367.979187,190.538193 367.979187,192.754532 C352.006195,192.754532 336.401611,192.754532 320.422119,192.754532 C320.422119,189.805099 320.422119,186.766861 320.422119,183.148254 C334.739838,183.148254 349.019318,183.148254 363.772339,183.148376 z"/>
 		</svg>
 	),
-	logoAlt2: ({...props}): LucideProps => (
+	logoAlt2: ({...props}) => (
 		<svg
 			aria-hidden="true"
 			focusable="false"
@@ -93,7 +93,7 @@ export const Icons = {
 	login: LogIn,
 	arrow: ArrowRight,
 	linkedIn: Linkedin,
-	github: ({...props}): LucideProps => (
+	github: ({...props}) => (
 		<svg
       aria-hidden="true"
       focusable="false"

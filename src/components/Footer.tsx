@@ -1,6 +1,8 @@
 import { POSTS } from "@/lib/constants";
 import { Icons } from "./Icons";
 import Link from "next/link";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 const Footer = () => {
 	return (
@@ -62,8 +64,19 @@ const Footer = () => {
 					<div className="space-y-4">
 						<h3 className="text-md font-semibold">Newsletter</h3>
 						<p className="text-gray-500 dark:text-gray-400 text-sm">Subscribe to our newsletter to stay up to date with the latest news and updates.</p>
+            <form>
+              <div className="flex space-x-2">
+                <Input className="flex space-x-2" type="email" placeholder="Enter your email" />
+                <Button>
+                  Subscribe
+                </Button>
+              </div>
+            </form>
 					</div>
 				</div>
+        <div className="mt-8 border-t border-gray-200 pt-4 text-center text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
+          &copy; 2025 Christopher Talavera. All rights reserved.
+        </div>
 			</div>
 		</footer>
 	);

@@ -1,15 +1,15 @@
 export const POSTS: { title: string; href: string; description: string }[] = [
   {
-    title: "Software Development",
-    href: "/blog/software-devlopment",
+    title: "SW Development",
+    href: "/blog/software-development",
     description:
       "Articles where I talk about Software Development.",
   },
 	{
-    title: "Cooking/Baking Recipes",
+    title: "Food Recipes",
     href: "/blog/recipes",
     description:
-      "Recipes for food and baked goods that I've attempted to make.",
+      "Recipes for dishes that I've attempted to make.",
   },
 	{
     title: "Gaming",

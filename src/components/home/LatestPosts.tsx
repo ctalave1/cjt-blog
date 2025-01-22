@@ -6,7 +6,7 @@ const LatestPosts = () => {
 	const latestPosts = useMemo(() => getBlogPosts(), []);
 	return (
 		<>
-			<h1>Recently Published</h1>
+			<h1 className="inline-block font-heading text-4xl tracking-text lg:text-5xl">Recently Published</h1>
 			{latestPosts
 				.sort((a, b) => {
 					if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
@@ -16,7 +16,7 @@ const LatestPosts = () => {
 					return 1;
 				}).map(post => (
 					<article key={post.slug} className="text-wrap max-w-md my-10">
-						<Link href="#">
+						<Link href={`/blog/${post.metadata.category}/${post.slug}`}>
 							<h3 className="font-bold py-2 leading-5 hover:text-blue-400">
 								{post.metadata.title}
 							</h3>
