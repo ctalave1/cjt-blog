@@ -58,9 +58,6 @@ export const MainNav = ({ className }: { className?: string}) => {
 				<Link href="/rss" className="hover:bg-accent hover:text-accent-foreground rounded-lg px-2 py-3 md:px-3">
 					<Icons.rss className="h-4 w-4" />
 				</Link>
-				<Link href="/login" className="hover:bg-accent hover:text-accent-foreground rounded-lg px-2 py-3 md:px-3">
-					<Icons.login className="h-4 w-4" />
-				</Link>
 			</div>
 		</div>
   )

@@ -34,6 +34,14 @@ export const getBlogPosts = () => {
   return getMDXData(path.join(process.cwd(), 'src', 'app', 'blog', 'contents'));
 }
 
+export const getTermsofServices = () => {
+  return getMDXData(path.join(process.cwd(), 'src', 'app', 'terms-of-services'));
+}
+
+export const getPrivacyPolicy = () => {
+  return getMDXData(path.join(process.cwd(), 'src', 'app', 'privacy-policy'));
+}
+
 export const formatDate = (date: string, includeRelative = false) => {
   let currentDate = new Date();
 

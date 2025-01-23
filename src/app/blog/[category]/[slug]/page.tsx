@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { BreadcrumbWithCustomSeparator as Breadcrumb } from "@/components/Breadcrumb";
 import CustomMDX from "@/components/CustomMDX";
 import ReportViews from "@/components/ReportViews";
+import { baseUrl } from "@/app/sitemap";
 
 export const generateStaticParams = () => {
   let posts = getBlogPosts();
@@ -12,6 +13,42 @@ export const generateStaticParams = () => {
   return posts.map(post => ({
     slug: post.slug
   }));
+};
+
+export const generateMetadata = ({ params }: {params: { category: string, slug: string }} ) => {
+  let { category, slug } = params;
+
+  let post = getBlogPosts().find(post => post.slug === slug);
+
+  if (!post) {
+    return;
+  }
+
+  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
+
+  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime,
+      url: `${baseUrl}/blog/${post.metadata.category}/${post.slug}`,
+      images: [
+        {
+          url: ogImage
+        }
+      ]
+    }
+  };
+  
+  return {
+    title: slug.toLocaleUpperCase(),
+    description: `All articles regarding ${category}`
+  };
 };
 
 const Page = ({ params }: { params: { category: string, slug: string } }) => {
@@ -23,6 +60,28 @@ const Page = ({ params }: { params: { category: string, slug: string } }) => {
 
   return (
     <>
+    <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.metadata.title,
+            datePublished: post.metadata.publishedAt,
+            dateModified: post.metadata.publishedAt,
+            description: post.metadata.summary,
+            image: post.metadata.image
+              ? `${baseUrl}${post.metadata.image}`
+              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            url: `${baseUrl}/blog/${post.metadata.category}/${post.slug}`,
+            author: {
+              "@type": "Person",
+              name: "Christopher Talavera Blog",
+            },
+          }),
+        }}
+      />
       <ReportViews
         category={post.metadata.category}
         title={post.metadata.title}

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/config/site";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,8 +17,40 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Christopher Talavera's Blog",
-  description: "A blog full of my thoughts on various topics that interest me.",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`
+  },
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+    "Shadcnui",
+    "Javascript",
+    "Blog"
+  ],
+  authors: [
+    {
+      name: "Christopher Talavera",
+      url: siteConfig.links.portfolio
+    }
+  ],
+  creator: "Christopher Talavera",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name
+  },
+  icons: {
+    icon: '/images/favicon.ico',
+    shortcut: '/images/favicon.ico'
+  }
 };
 
 export default function RootLayout({

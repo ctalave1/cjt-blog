@@ -13,6 +13,15 @@ export const generateStaticParams = () => {
   }))
 };
 
+export const generateMetadata = ({ params }: {params: { category: string }} ) => {
+  let { category } = params;
+  
+  return {
+    title: category.toLocaleUpperCase(),
+    description: `All articles regarding ${category}`
+  };
+};
+
 const Page = ({ params }: { params: { category: string }}) => {
   let posts = getBlogPosts().filter(post => post.metadata.category === params.category);
 
