@@ -10,7 +10,7 @@ const sitemap = async () => {
   }));
 
   let routes = POSTS.map((route) => ({
-    url: `${baseUrl}/${route.href}`,
+    url: `${baseUrl}${route.href}`,
     lastModified: new Date().toISOString().split('T')[0]
   }));
 
